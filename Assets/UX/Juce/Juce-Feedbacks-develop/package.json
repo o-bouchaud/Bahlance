@@ -1,0 +1,21 @@
+{
+  "name": "com.juce.feedbacks",
+  "version": "1.0.0",
+  "displayName": "Juce-Feedbacks",
+  "description": "Feedbacks library",
+  "dependencies": {
+    "com.juce.tween": "1.0.0",
+	"com.juce.utils": "1.0.0"
+  },
+  "keywords": [
+    "Juce",
+    "Feedbacks"
+  ],
+  "author": {
+    "name": "Guillem Sunyer",
+    "email": "juce.unity@gmail.com",
+    "url": "https://github.com/Juce-Assets/Juce-Feedbacks"
+  },
+  "type": "template",
+  "hideInEditor": false
+}
