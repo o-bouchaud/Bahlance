@@ -26,6 +26,12 @@ public class inkTestingScript : MonoBehaviour
             //the list of choices should now appear in the Console;
         }
 
+        //we're now going to check how to make a choice;
+        story.ChooseChoiceIndex(0);
+        //choices starts at 0;
+
+        Debug.Log(loadStoryChunk());
+        //we're calling the loadStoryChunk function;
     }
 
     // Update is called once per frame
