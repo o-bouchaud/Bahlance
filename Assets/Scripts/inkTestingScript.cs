@@ -15,14 +15,24 @@ public class inkTestingScript : MonoBehaviour
         story = new Story(inkJSON.text);
         //we create a new story object using Ink's Story class;
         //we give it inkJSON's text as a parameter;
+        loadStoryChunk();
+        //we're calling the loadStoryChunk function;
 
-        Debug.Log(story.Continue());
         //Continue loads the story each line at a time;
+        //ContinueMaximally loads the story to the next choice
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void loadStoryChunk()
+    {
+        
+        story.ContinueMaximally();
+        //Continue loads the story each line at a time;
+        //ContinueMaximally loads the story to the next choice
     }
 }
