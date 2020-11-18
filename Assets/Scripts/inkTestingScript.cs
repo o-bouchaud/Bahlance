@@ -18,8 +18,14 @@ public class inkTestingScript : MonoBehaviour
         Debug.Log(loadStoryChunk());
         //we're calling the loadStoryChunk function;
 
-        //Continue loads the story each line at a time;
-        //ContinueMaximally loads the story to the next choice
+
+        for (int i = 0; i < story.currentChoices.Count; i++)
+        //the for loop is going to move through the total number of currentChoices;
+        {
+            Debug.Log(story.currentChoices[i].text);
+            //the list of choices should now appear in the Console;
+        }
+
     }
 
     // Update is called once per frame
@@ -40,7 +46,7 @@ public class inkTestingScript : MonoBehaviour
         {
             text = story.ContinueMaximally();
             //Continue loads the story each line at a time;
-         //ContinueMaximally loads the story to the next choice
+            //ContinueMaximally loads the story to the next choice
         }
 
         return text;
