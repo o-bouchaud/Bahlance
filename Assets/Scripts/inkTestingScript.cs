@@ -12,7 +12,12 @@ public class inkTestingScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        story = new Story(inkJSON.text);
+        //we create a new story object using Ink's Story class;
+        //we give it inkJSON's text as a parameter;
+
+        Debug.Log(story.Continue());
+        //Continue loads the story each line at a time;
     }
 
     // Update is called once per frame
