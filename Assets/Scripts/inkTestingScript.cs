@@ -19,15 +19,19 @@ public class inkTestingScript : MonoBehaviour
     public Button buttonPrefab;
     void Start()
     {
+        story = new Story(inkJSON.text);
+        //we create a new story object using Ink's Story class;
+        //we give it inkJSON's text as a parameter;
         
+        refreshUI();
+        //we're calling the refreshUI function;
 
     }
 
     void refreshUI()
     {
-        story = new Story(inkJSON.text);
-        //we create a new story object using Ink's Story class;
-        //we give it inkJSON's text as a parameter;
+        eraseUI();
+        //we call the eraseUI function to destroy the previous UI;
 
         var storyTextInstance = Instantiate(textPrefab);
         //we instantiate a clone of our prefab as text;
@@ -57,10 +61,20 @@ public class inkTestingScript : MonoBehaviour
         }
     }
 
+
+    void eraseUI()
+    {
+        for(int i = 0; i< this.transform.childCount; i++)
+        {
+            Destroy(this.transform.GetChild(i).gameObject);
+        }
+    }
     void chooseStoryChoice(Choice choice)
     {
         //we're now going to check how to make a choice;
         story.ChooseChoiceIndex(choice.index);
+        refreshUI();
+        //UI will be refreshed everytime the Player makes a choice;
 
     }
 
