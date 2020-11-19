@@ -3,6 +3,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+//to be able to use UI's classes;
 
 public class inkTestingScript : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class inkTestingScript : MonoBehaviour
     public TextAsset inkJSON;
     private Story story;
     // Start is called before the first frame update
+
+    public Text textPrefab;
+    public Button buttonPrefab;
     void Start()
     {
         story = new Story(inkJSON.text);
