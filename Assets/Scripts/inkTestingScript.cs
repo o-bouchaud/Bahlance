@@ -15,7 +15,7 @@ public class inkTestingScript : MonoBehaviour
     private Story story;
     // Start is called before the first frame update
 
-    public TMP_Text textPrefab;
+    public TextMeshProUGUI textPrefab;
     public Button buttonPrefab;
     void Start()
     {
@@ -23,8 +23,9 @@ public class inkTestingScript : MonoBehaviour
         //we create a new story object using Ink's Story class;
         //we give it inkJSON's text as a parameter;
 
-        TMP_Text storyText = Instantiate(textPrefab) as TMP_Text;
+        var storyTextInstance = Instantiate(textPrefab);
         //we instantiate a clone of our prefab as text;
+        var storyText = storyTextInstance.GetComponent<TextMeshProUGUI>();
         storyText.text = loadStoryChunk();
         //we're loading its text with the loadStoryChunk() function;
         storyText.transform.SetParent(this.transform, false);
@@ -37,8 +38,8 @@ public class inkTestingScript : MonoBehaviour
         foreach (Choice choice in story.currentChoices)
         //the for loop is going to move through the total number of currentChoices;
         {
-            Button choiceButton = Instantiate(buttonPrefab) as Button;
-            Text choiceText =  buttonPrefab.GetComponentInChildren<TextMeshProUGUI>();
+            var choiceButton = Instantiate(buttonPrefab);
+            var choiceText =  buttonPrefab.GetComponentInChildren<TextMeshProUGUI>();
             //We create the choiceText variable and give it the Button's text value;
             choiceText.text = choice.text;
             choiceButton.transform.SetParent(this.transform, false);
