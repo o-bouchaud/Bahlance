@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 //to be able to use UI's classes;
+using TMPro;
+
 
 public class inkTestingScript : MonoBehaviour
 {
@@ -13,7 +15,7 @@ public class inkTestingScript : MonoBehaviour
     private Story story;
     // Start is called before the first frame update
 
-    public Text textPrefab;
+    public TMP_Text textPrefab;
     public Button buttonPrefab;
     void Start()
     {
