@@ -34,11 +34,15 @@ public class inkTestingScript : MonoBehaviour
         //we're calling the loadStoryChunk function;
 
 
-        for (int i = 0; i < story.currentChoices.Count; i++)
+        foreach (Choice choice in story.currentChoices)
         //the for loop is going to move through the total number of currentChoices;
         {
-            Debug.Log(story.currentChoices[i].text);
-            //the list of choices should now appear in the Console;
+            Button choiceButton = Instantiate(buttonPrefab) as Button;
+            Text choiceText =  buttonPrefab.GetComponentInChildren<TextMeshProUGUI>();
+            //We create the choiceText variable and give it the Button's text value;
+            choiceText.text = choice.text;
+            choiceButton.transform.SetParent(this.transform, false);
+
         }
 
         //we're now going to check how to make a choice;
