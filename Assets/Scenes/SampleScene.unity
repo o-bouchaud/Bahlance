@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 322846ddfa2ff224489b1a3635a0cfd4, type: 3}
-  textPrefab: {fileID: 0}
+  textPrefab: {fileID: 4030204159807360527, guid: d65a047ab785a5d49bd425d4526cbad6, type: 3}
   buttonPrefab: {fileID: 1509190240623090649, guid: e40a3dd47cc61ec439422c03cc502c6f, type: 3}
 --- !u!114 &256467649
 MonoBehaviour:
@@ -332,8 +332,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
