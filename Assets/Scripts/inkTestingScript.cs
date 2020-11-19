@@ -22,6 +22,14 @@ public class inkTestingScript : MonoBehaviour
         story = new Story(inkJSON.text);
         //we create a new story object using Ink's Story class;
         //we give it inkJSON's text as a parameter;
+
+        TMP_Text storyText = Instantiate(textPrefab) as TMP_Text;
+        //we instantiate a clone of our prefab as text;
+        storyText.text = loadStoryChunk();
+        //we're loading its text with the loadStoryChunk() function;
+        storyText.transform.SetParent(this.transform, false);
+        //we do not change anything relative to its position;
+
         Debug.Log(loadStoryChunk());
         //we're calling the loadStoryChunk function;
 
