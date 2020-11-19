@@ -19,6 +19,12 @@ public class inkTestingScript : MonoBehaviour
     public Button buttonPrefab;
     void Start()
     {
+        
+
+    }
+
+    void refreshUI()
+    {
         story = new Story(inkJSON.text);
         //we create a new story object using Ink's Story class;
         //we give it inkJSON's text as a parameter;
@@ -26,13 +32,12 @@ public class inkTestingScript : MonoBehaviour
         var storyTextInstance = Instantiate(textPrefab);
         //we instantiate a clone of our prefab as text;
         var storyText = storyTextInstance.GetComponent<TextMeshProUGUI>();
+       
         storyText.text = loadStoryChunk();
         //we're loading its text with the loadStoryChunk() function;
         storyText.transform.SetParent(this.transform, false);
         //we do not change anything relative to its position;
 
-        Debug.Log(loadStoryChunk());
-        //we're calling the loadStoryChunk function;
 
 
         foreach (Choice choice in story.currentChoices)
@@ -44,14 +49,19 @@ public class inkTestingScript : MonoBehaviour
             choiceText.text = choice.text;
             choiceButton.transform.SetParent(this.transform, false);
 
+            choiceButton.onClick.AddListener(delegate 
+                {
+                    chooseStoryChoice(choice);
+                });
+
         }
+    }
 
+    void chooseStoryChoice(Choice choice)
+    {
         //we're now going to check how to make a choice;
-        story.ChooseChoiceIndex(0);
-        //choices starts at 0;
+        story.ChooseChoiceIndex(choice.index);
 
-        Debug.Log(loadStoryChunk());
-        //we're calling the loadStoryChunk function;
     }
 
     // Update is called once per frame
